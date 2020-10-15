@@ -1,4 +1,6 @@
-﻿namespace kosar2004
+﻿using System;
+
+namespace kosar2004
 {
     internal class Meccs
     {
@@ -17,6 +19,23 @@
             this.IPont = iPont;
             this.Hely = hely;
             this.Ido = ido;
+        }
+
+        public Meccs(string sor)
+        {
+            string[] a = sor.Split(';');
+            Hazai = a[0];
+            Idegen = a[1];
+            HPont = Convert.ToInt32(a[2]);
+            IPont = Convert.ToInt32(a[3]);
+            Hely = a[4];
+            Ido = a[5];
+        }
+
+        public string Atalakit()
+        {
+            string tmp=Hazai+" - "+Idegen+" "+"("+Convert.ToInt32(HPont)+":"+Convert.ToInt32(IPont)+")";
+            return tmp;
         }
     }
 }
